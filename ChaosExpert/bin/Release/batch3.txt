@@ -1,0 +1,65 @@
+cd by_time rao_full.csv 6 03.07.2006.10.40-27.02.2007.17.30 17000 ; finam 2 0.01 1 600 16 false
+cd by_time raop_full.csv 6 03.07.2006.10.40-27.02.2007.17.30 17000 ; finam 2 0.01 1 600 16 false
+cd by_time gmkn_full.csv 6 03.07.2006.10.40-27.02.2007.17.30 17000 ; finam 2 0.01 1 600 16 false
+cd by_time gazp_full.csv 6 03.07.2006.10.40-27.02.2007.17.30 17000 ; finam 2 0.01 1 600 16 false
+cd by_time boing_full.csv 6 03.07.2006.10.40-27.02.2007.17.30 17000 , classic 2 0.01 1 600 16 false
+cd by_time nasdaq_full.csv 6 03.07.2006.10.40-31.10.2006.17.30 17000 ; finam 2 0.01 1 600 16 false
+cd by_time luk3.csv 6 03.07.2006.10.40-27.02.2007.17.30 17000 ; finam 2 0.01 1 600 16 false
+cd by_time coca_cola_full.csv 6 03.07.2006.10.40-27.02.2007.17.30 17000 , classic 2 0.01 1 600 16 false
+cd by_time plzl_full.csv 6 03.07.2006.10.40-27.02.2007.17.30 17000 ; finam 2 0.01 1 600 16 false
+cd by_time mmvb_full.csv 6 03.07.2006.10.40-27.02.2007.17.30 17000 ; finam 2 0.01 1 600 16 false
+cd by_time gold.csv 6 03.07.2006.10.40-27.02.2007.17.30 17000 , classic 2 0.01 1 600 16 false
+cd by_time american_express_full.csv 6 03.07.2006.10.40-27.02.2007.17.30 17000 , classic 2 0.01 1 600 16 false
+
+rs by_time EURUSD_1m.csv 3 03.07.2006.10.40-27.02.2007.17.30 17000 ; finam 2 false
+chaosexpert rs simple henon_random.csv 0 3200 ; 2 false
+
+cd simple henon.csv 0 17000 ; 2 0.01 1 600 16 false
+ami simple coca-cola.csv_norm.csv 0 17000 ; 2 1 50 100
+//                                          индекс столбца, максимальное число элементов, разделитель, число потоков (не пашет), нач. лаг, конечн. лаг, число уровней разбиения
+ami simple lorenz_big.csv 0 1700000 ; 2 0 150 500
+lyapunov by_time EURUSD_1m.csv 3 03.07.2006.10.40-27.02.2007.17.30 17000000 ; finam 2 9 5 10
+
+lyapunov simple lorenz_big.csv 0(индекс столбца в файле) 17000000(макс. число элеменов) ;(разделитель) 2(потоки не пашут) 3(глубина вложения) 8(лаг) 10(длина траектории)
+lyapunov simple lorenz_big.csv 0 17000000 ; 2 3 8 10
+
+//Индекс вариации
+varind dfn lorenz_small.csv dci 0 dmc 8000 dd ; psi 0 pei 1000 psl 20 pel 500 pwl 100
+varind dfn exxon_mobile_full.csv dtp 03.07.2006.10.40-27.02.2007.17.30 dfr classic dci 3 dmc 17000 dd , psi 0 pei 0 psl 10 pel 100 pwl 200
+varind dfn nikel_luk_dima.csv  psi 0 pei 0 psl 20 pel 100 pwl 110
+
+rs dfn exxon_mobile_full.csv dtp 03.07.2006.10.40-27.02.2007.17.30 dfr classic dci 3 dmc 17000 dd ,
+
+mlp dfn exxon_mobile_full.csv dtp 22.01.2006.16.40-22.12.2006.17.30 dfr classic dci 3 dmc 600 dd , pls 90 pdi 1
+
+trade dfn gazp_full.csv dtp 15.01.2006.10.40-22.05.2008.17.30 dfr finam dci 3 dmc 10000 dd ; pls 90 pdi 1
+
+data_process dfn raop_full.csv dtp 01.06.2005.11.00-15.10.2007.17.45 dfr finam dci 3 dmc 10000 dd ; pls 90 pdi 1
+data_process dfn gmkn.csv dtp 01.06.2006.11.00-15.03.2007.17.45 dfr finam dci 3 dmc 30000 dd ;
+
+classification dfn m1_eurusd.csv dtp 01.11.2006.11.00-01.01.2007.17.45 dfr classic dci 3 dmc 10000 dd , pls 90 pdi 1
+
+ami dfn henon9000_ikeda9000_norm_noise0.95.csv psd 1 ped 0 plc 10 ptc 1
+psd - start delay 
+ped - end delay 
+plc - level count 
+ptc - tread count
+
+disorder_brodsky_darhovsky_overall dfn ibm5000_wmt1000_noise_0.1.csv pv 1
+cusum dfn test.csv
+rs dfn test.csv
+time_threshold_change dfn msft_full.csv dtp 01.01.2005.11.00-01.01.2006.17.45 dfr classic dci 3 dmc 10000 dd , pt 0.9
+time_threshold_change dfn luk.csv dtp 01.01.2009.11.00-18.06.2009.17.45 dfr finam dci 3 dmc 10000 dd ; pt 1
+classification dfn msft_full.csv dtp 01.01.2005.11.00-01.01.2006.17.45 dfr classic dci 3 dmc 10000 dd ,
+mlp dfn mlp.csv pls 99 pdi 1
+
+time_threshold_change dfn test.csv pt 20
+varind dfn  _cusum_vi.csv  psi 0 pei 0 psl 5 pel 30 pwl 60 pnum_reg 5
+classification dfn class.csv
+
+aggregate_to_secs dfn gazp_tics.csv pdelim ;
+local_extremum_statistic dfn gazp_tics.bin p_startThreshold 0.2 p_endThreshold 1.5 p_deltaThreshold 0.1 p_deltaMaxThreshold 0.5 p_stepThreshold 0.05  p_probabilityLimit 80
+classification dfn gazp_tics.bin dtp 01.01.2005.11.00-01.01.2006.17.45
+
+trade dfn gazp_full.csv
+aggregate_to_secs dfn d:\Work\My\ChaosExpert\ChaosExpert\bin\Release\sec\GAZP_10_.csv pstart_num 1 pend_num 2 pdelim ;

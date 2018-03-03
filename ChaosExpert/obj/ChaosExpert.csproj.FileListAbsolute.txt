@@ -1,0 +1,13 @@
+d:\Work\My\ChaosExpert\ChaosExpert\bin\Release\ChaosExpert.exe
+d:\Work\My\ChaosExpert\ChaosExpert\bin\Release\ChaosExpert.pdb
+d:\Work\My\ChaosExpert\ChaosExpert\obj\Release\ResolveAssemblyReference.cache
+d:\Work\My\ChaosExpert\ChaosExpert\obj\Release\ChaosExpert.Form1.resources
+d:\Work\My\ChaosExpert\ChaosExpert\obj\Release\ChaosExpert.FormProcess.resources
+d:\Work\My\ChaosExpert\ChaosExpert\obj\Release\ChaosExpert.GraphForm.resources
+d:\Work\My\ChaosExpert\ChaosExpert\obj\Release\ChaosExpert.LoadDataParamForm.resources
+d:\Work\My\ChaosExpert\ChaosExpert\obj\Release\ChaosExpert.Properties.Resources.resources
+d:\Work\My\ChaosExpert\ChaosExpert\obj\Release\ChaosExpert.ReportForm.resources
+d:\Work\My\ChaosExpert\ChaosExpert\obj\Release\ChaosExpert.VariationIndexParamsForm.resources
+d:\Work\My\ChaosExpert\ChaosExpert\obj\Release\ChaosExpert.csproj.GenerateResource.Cache
+d:\Work\My\ChaosExpert\ChaosExpert\obj\Release\ChaosExpert.exe
+d:\Work\My\ChaosExpert\ChaosExpert\obj\Release\ChaosExpert.pdb
